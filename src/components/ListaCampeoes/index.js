@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components';
-import { buscarCampeoes } from '../../fetch';
+import { CampeoesContext } from "../../Context/CampeoesContext";
+
 import ItemCampeao from './ItemCampeao';
 
-const Lista = ({className}) => {
+const Lista = ({ className }) => {
 
-    const [campeoes, setCampeoes] = useState({});
-    const nameCampeoes = Object.keys(campeoes);
-    console.log(campeoes);
-
-    useEffect(() => {
-
-        buscarCampeoes()
-            .then(campeoes => setCampeoes(campeoes))
-            .catch(error => console.log(error))
-
-    }, [])
+    const { campeoes, nameCampeoes } = useContext(CampeoesContext);
 
     return (
         <ul className={className}>

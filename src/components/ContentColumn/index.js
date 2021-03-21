@@ -19,7 +19,8 @@ const ContentColumn = styled.section`
     a {
         display: inline-block;
         border-radius: 2px;
-        padding: 10px 15px;
+        padding: 10px 20px;
+        font-weight: 500;
         background-color: ${({ theme }) => theme.colors.secundo};
         color: ${({ theme }) => theme.colors.textoPreto};
 

@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom'
+import CampeoesProvider from '../Context/CampeoesContext'
 
 import Campeoes from './Campeoes'
 import Home from './Home'
@@ -11,7 +12,9 @@ const Router = () => {
                 <Home />
             </Route>
             <Route exact path="/campeoes" >
-                <Campeoes />
+                <CampeoesProvider>
+                    <Campeoes />
+                </CampeoesProvider>
             </Route>
         </Switch>
     )

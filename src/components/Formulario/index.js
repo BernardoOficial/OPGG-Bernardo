@@ -35,14 +35,12 @@ const Form = ({ className }) => {
   };
 
   return (
-    <div>
-      {/* {temErro && <MensagemErro fecharMensagemErro={fecharMensagemErro} />} */}
-      <p>Entre com o username para mais informações do jogador.</p>
-      <form className={className} onSubmit={handleSubmit}>
+    <form className={className} onSubmit={handleSubmit}>
+        {/* {temErro && <MensagemErro fecharMensagemErro={fecharMensagemErro} />} */}
+        <p>Entre com o username para mais informações do jogador.</p>
         <SearchInput name="username" setUsername={setUsername} />
         <Button disabled={disableButton}>Buscar user</Button>
       </form>
-    </div>
   );
 };
 
@@ -54,6 +52,12 @@ const Formulario = styled(Form)`
   width: 100%;
 
   animation: show 1s linear forwards;
+
+  & > p {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    text-align: center;
+  }
 
   @keyframes show {
     from {
