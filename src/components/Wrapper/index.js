@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 10px 20px;
-`
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 
-export default Wrapper
+  ${(props) => props.isSkew && 'transform: skew(30deg);'}
+`;
+
+export default Wrapper;
