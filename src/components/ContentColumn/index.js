@@ -38,22 +38,6 @@ ContentColumn.SearchUser = styled.section`
     justify-content: space-between;
 `;
 
-ContentColumn.Titulo = styled.h1`
-    font-size: 4rem;
-    color: #ffffff;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    letter-spacing: 1px;
-
-    span {
-        margin-top: 1rem;
-        display: block;
-        font-size: 0.6rem;
-        letter-spacing: 0.5px;
-        color: #dddddd;
-    }
-`
-
 ContentColumn.Wallpaper = styled.section`
   background: url(${wallpaper}) no-repeat;
   background-size: cover;

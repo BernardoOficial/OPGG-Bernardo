@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Item = ({ className, idName, name, tags, resumehistory }) => {
+const Item = ({ className, idName, name, tags }) => {
   const lastIndex = tags.length - 1;
 
   const lastTag = tags[lastIndex];
@@ -21,21 +21,36 @@ const Item = ({ className, idName, name, tags, resumehistory }) => {
           <p>{formatTagsEmString}</p>
         </div>
       </figure>
-      <p>{resumehistory}</p>
     </li>
   );
 };
 
 const ItemCampeao = styled(Item)`
-  list-style: none;
   display: inline-block;
+  list-style: none;
   border-radius: 5px;
-
+  overflow: hidden;
   width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    z-index: 1;
+    transition: all 0.3s linear;
+  }
+
+  &:hover::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
   figure {
     position: relative;
-    height: 180px;
+    height: 250px;
 
     img {
       width: 100%;
@@ -50,13 +65,6 @@ const ItemCampeao = styled(Item)`
       padding: 10px;
       color: #ffffff;
     }
-  }
-
-  & > p {
-    padding: 20px 15px;
-    background-color: #222222;
-    color: #777;
-    height: 240px;
   }
 `;
 
