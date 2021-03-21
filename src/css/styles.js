@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
     }
 
     
@@ -43,7 +44,15 @@ const GlobalStyle = createGlobalStyle`
 const theme = {
     colors: {
         branco: '#ffffff',
-        preto: '#121212'
+        preto: '#121212',
+        primeiro: "#100D02",
+        secundo: "#F9BA0D",
+        terceiro: "#ffffff",
+        quarta: '#232324',
+        textoBranco: "#ffffff",
+        textoPreto: "#444444",
+        tituloBranco: "#ffffff",
+        tituloPreto: "#444444"
     }
 }
 

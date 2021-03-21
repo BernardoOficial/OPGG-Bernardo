@@ -28,6 +28,8 @@ const Item = ({ className, idName, name, tags, resumehistory }) => {
 
 const ItemCampeao = styled(Item)`
   list-style: none;
+  display: inline-block;
+  border-radius: 5px;
 
   width: 100%;
 
