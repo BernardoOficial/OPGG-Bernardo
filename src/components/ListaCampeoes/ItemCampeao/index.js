@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Item = ({ className, idName, name, tags }) => {
+const Item = ({ className, index, idName, name, tags }) => {
   const lastIndex = tags.length - 1;
 
   const lastTag = tags[lastIndex];
@@ -9,7 +9,10 @@ const Item = ({ className, idName, name, tags }) => {
     .replace(`, ${lastTag}`, ` e ${lastTag}`);
 
   return (
-    <li className={className}>
+    <li
+      className={className}
+      style={{ animationDelay: `${index * 0.2}s` }}
+    >
       <figure>
         <img
           src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${idName}_0.jpg`}
@@ -32,6 +35,8 @@ const ItemCampeao = styled(Item)`
   overflow: hidden;
   width: 100%;
   position: relative;
+  visibility: hidden;
+  animation: showAnimation 1s ease-out forwards;
 
   &::before {
     content: "";
@@ -46,6 +51,18 @@ const ItemCampeao = styled(Item)`
 
   &:hover::before {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @keyframes showAnimation {
+    from {
+      opacity: 0.7;
+      transform: translateY(20px);
+    }
+    to {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 
   figure {

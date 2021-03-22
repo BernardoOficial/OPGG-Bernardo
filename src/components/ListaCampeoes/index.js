@@ -6,17 +6,18 @@ import ItemCampeao from './ItemCampeao';
 
 const Lista = ({ className }) => {
 
-    const { campeoes, nameCampeoes } = useContext(CampeoesContext);
+    const { campeoes, campeoesVisualizados } = useContext(CampeoesContext);
 
     return (
         <ul className={className}>
-            {nameCampeoes.map(nome => (
+            {campeoesVisualizados.map((nome, index) => (
                 <ItemCampeao
-                key={campeoes[nome].key}
-                idName={campeoes[nome].id}
-                name={campeoes[nome].name}
-                tags={campeoes[nome].tags}
-              />
+                    index={index}
+                    key={campeoes[nome].key}
+                    idName={campeoes[nome].id}
+                    name={campeoes[nome].name}
+                    tags={campeoes[nome].tags}
+                />
             )
             )}
         </ul>

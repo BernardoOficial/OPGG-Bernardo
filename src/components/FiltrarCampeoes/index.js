@@ -1,5 +1,8 @@
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import Select from "react-select";
+
+import { CampeoesContext } from "../../Context/CampeoesContext";
 
 const customStyle = {
   container: (provided) => ({
@@ -27,40 +30,71 @@ const customStyle = {
 };
 
 const options = [
-  { value: "nenhum", label: "Escolha uma Categoria", disable: 'yes' },
-  { value: "assassinos", label: "Assassinos" },
-  { value: "tanque", label: "Tanque" },
-  { value: "mago", label: "Mago" },
-  { value: "atirador", label: "Atirador" },
-  { value: "lutador", label: "Lutador" },
-  { value: "suporte", label: "Suporte" },
+  { value: "", label: "Escolha uma Categoria" },
+  { value: "Assassin", label: "Assassinos" },
+  { value: "Tank", label: "Tanque" },
+  { value: "Mage", label: "Mago" },
+  { value: "Marksman", label: "Atirador" },
+  { value: "Fighter", label: "Lutador" },
+  { value: "Support", label: "Suporte" },
 ];
+
 
 const Filtrar = ({ className }) => {
 
-    return (
-        <form className={className}>
-            <input
-                name="campeao"
-                type="text"
-                placeholder="Pesquise pelo nome de um campeão"
-            />
-            <Select
-                name="categoria"
-                styles={customStyle}
-                options={options}
-                isOptionDisabled={(option) => option.disable === 'yes'}
-                defaultValue={options[0]}
-            />
-        </form>
-    );
+  const { filtrarCampeoes } = useContext(CampeoesContext);
+  
+  const [searchCampeao, setSearchCampeao] = useState({
+    campeaoBuscado: "",
+    categoriaBuscada: ""
+  });
+  
+  const handleInput = evento => {
+    const { name, value } = evento.target;
+
+    setSearchCampeao(currentState => {
+      const newState = { ...currentState, [name]: value };
+      filtrarCampeoes(newState);
+      return newState;
+    })
+  }
+  
+  const handleSelect = evento => {
+    const { value } = evento;
+
+    setSearchCampeao(currentState => {
+      const newState = { ...currentState, categoriaBuscada: value };
+      filtrarCampeoes(newState);
+      return newState
+    })
+  }
+
+  return (
+      <form className={className}>
+          <input
+              name="campeaoBuscado"
+              type="text"
+              value={searchCampeao.campeaoBuscado}
+              placeholder="Pesquise pelo nome de um campeão"
+              onInput={handleInput}
+          />
+          <Select
+              name="categoriaBuscada"
+              styles={customStyle}
+              options={options}
+              isOptionDisabled={(option) => option.disable === 'yes'}
+              defaultValue={options[0]}
+              onChange={handleSelect}
+          />
+      </form>
+  );
 }
 
 const FiltrarCampeoes = styled(Filtrar)`
   display: flex;
 
   & > input {
-    width: 17rem;
+    width: 20rem;
     height: 3rem;
     border-radius: 4px;
     padding: 0 10px;
