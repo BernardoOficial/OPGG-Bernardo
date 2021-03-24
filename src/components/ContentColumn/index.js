@@ -2,34 +2,43 @@ import styled from 'styled-components';
 import wallpaper from '../../assets/images/wallpaper.jpg'
 
 const ContentColumn = styled.section`
-    display: grid;
+  display: grid;
 
-    width: 100%;
-    grid-template-columns: 400px 1fr;
-    grid-template-rows: 600px;
-    
-    align-content: center;
-    
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+  width: 100%;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: 600px;
 
-    background-color: ${({ theme }) => theme.colors.primeiro};
-    color: ${({ theme}) => theme.colors.textoBranco};
+  align-content: center;
 
-    a {
-        display: inline-block;
-        border-radius: 2px;
-        padding: 10px 20px;
-        font-weight: 500;
-        background-color: ${({ theme }) => theme.colors.secundo};
-        color: ${({ theme }) => theme.colors.textoPreto};
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 
-        &:hover {
-            filter: brightness(90%);
-        }
+  background-color: ${({ theme }) => theme.colors.primeiro};
+  color: ${({ theme }) => theme.colors.textoBranco};
+
+  a {
+    display: inline-block;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-weight: 500;
+    background-color: ${({ theme }) => theme.colors.secundo};
+    color: ${({ theme }) => theme.colors.textoPreto};
+
+    &:hover {
+      filter: brightness(90%);
     }
+  }
 
-`
+  @media (max-width: 820px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 500px) {
+  }
+`;
 
 ContentColumn.SearchUser = styled.section`
     padding: 50px;
@@ -57,6 +66,11 @@ ContentColumn.Wallpaper = styled.section`
     font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: 1px;
+
+    @media (max-width: 820px) {
+      max-width: 100%;
+      margin: 0 4rem 1rem;
+    }
   }
 `;
 

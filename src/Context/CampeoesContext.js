@@ -38,7 +38,6 @@ const CampeoesProvider = ({children}) => {
 
         const filtrarPelaCategoria = nameCampeao => {
             const categoriasDoCampeao = campeoes[nameCampeao].tags;
-            console.log(categoriasDoCampeao);
             const isMatchCampeao = categoriasDoCampeao.includes(categoriaBuscada);
             return isMatchCampeao
         }
