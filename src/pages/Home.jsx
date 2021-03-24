@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <Skew>
             <Wrapper isSkew={true}>
-                <Container>
+                <Container alignItemsCenter>
                     <ContentColumn>
                         <ContentColumn.SearchUser>
                             <Titulo textoBranco spanTextoBranco>

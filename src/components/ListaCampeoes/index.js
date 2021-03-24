@@ -29,6 +29,16 @@ const ListaCampeoes = styled(Lista)`
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
     margin-top: 4rem;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        gap: 0; 
+        row-gap: 1.5rem; 
+    }
 `
 
 export default ListaCampeoes;

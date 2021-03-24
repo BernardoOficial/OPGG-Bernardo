@@ -11,13 +11,11 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-size: 16px;
         line-height: 1.5rem;
-
         @media (max-width: 900px) {
             font-size: 13px;
         }
-        
         @media (max-width: 500px) {
-            font-size: 10px;
+            font-size: 12px;
         }
     }
 
@@ -35,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: "Poppins", sans-serif;
-        overflow-x: hidden;
+        // overflow-x: hidden;
     }
 
     

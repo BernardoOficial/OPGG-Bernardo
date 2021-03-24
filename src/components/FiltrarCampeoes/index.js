@@ -93,6 +93,11 @@ const Filtrar = ({ className }) => {
 const FiltrarCampeoes = styled(Filtrar)`
   display: flex;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   & > input {
     width: 20rem;
     height: 3rem;
@@ -106,6 +111,10 @@ const FiltrarCampeoes = styled(Filtrar)`
     font-size: 1rem;
     font-weight: 400;
     color: #222222;
+
+    @media (max-width: 600px) {
+      margin: 0 0 1rem;
+    }
 
     &::placeholder {
       color: #333;

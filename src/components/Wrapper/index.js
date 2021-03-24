@@ -5,7 +5,11 @@ const Wrapper = styled.section`
   max-width: 1300px;
   margin: 0 auto;
 
-  ${(props) => props.isSkew && 'transform: skew(30deg);'}
+  ${(props) => props.isSkew && "transform: skew(0, 5deg);"}
+
+  @media (max-width: 500px) {
+    ${(props) => props.isSkew && "transform: skew(0, 10deg);"}
+  }
 `;
 
 export default Wrapper;

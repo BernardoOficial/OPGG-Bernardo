@@ -69,7 +69,7 @@ ContentColumn.Wallpaper = styled.section`
 
     @media (max-width: 820px) {
       max-width: 100%;
-      margin: 0 4rem 1rem;
+      margin: 3rem 4rem 1rem;
     }
   }
 `;

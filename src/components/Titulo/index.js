@@ -19,7 +19,7 @@ const Titulo = styled.h1`
 const TituloContainer = styled(Titulo)`
   display: inline-block;
   margin: 2rem 0;
-  padding: 30px;
+  padding: 1.9rem;
   background-color: ${({ theme }) => theme.colors.secundo};
   position: relative;
 
@@ -29,10 +29,14 @@ const TituloContainer = styled(Titulo)`
     top: 0;
     left: 100%;
     /* background-color: red; */
-    border-top: 70px solid ${({ theme }) => theme.colors.secundo};
-    border-left: 70px solid ${({ theme }) => theme.colors.secundo};
-    border-bottom: 70px solid transparent;
-    border-right: 70px solid transparent;
+    border-top: 4.375rem solid ${({ theme }) => theme.colors.secundo};
+    border-left: 4.375rem solid ${({ theme }) => theme.colors.secundo};
+    border-bottom: 4.375rem solid transparent;
+    border-right: 4.375rem solid transparent;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 `;
 
