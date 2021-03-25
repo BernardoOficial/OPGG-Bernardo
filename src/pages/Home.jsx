@@ -12,8 +12,8 @@ const Home = () => {
 
     return (
         <Skew>
-            <Wrapper isSkew={true}>
-                <Container alignItemsCenter>
+            <Container alignItemsCenter>
+                <Wrapper isSkew={true}>
                     <ContentColumn>
                         <ContentColumn.SearchUser>
                             <Titulo textoBranco spanTextoBranco>
@@ -29,8 +29,8 @@ const Home = () => {
                             <Link to="/campeoes">Acessar</Link>
                         </ContentColumn.Wallpaper>
                     </ContentColumn>
-                </Container>
-            </Wrapper>
+                </Wrapper>
+            </Container>
         </Skew>
     )
 }

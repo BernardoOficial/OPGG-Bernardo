@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import Banner from "../components/Banner";
 import Container from "../components/Container";
+import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
 import { buscarMaisInfoCampeao } from "../fetch";
 
@@ -18,18 +20,21 @@ const CampeaoInfo = () => {
 
     }, [id])
 
-    return (
-        <Container>
-            <Wrapper>
-                <h1>Mais informações do Campeão</h1>
+    console.log(campeao);
 
-                <div style={{ width: '500px', margin: '0 auto', padding: '30px' }}>
-                    <h1>{campeao.name}</h1>
-                    <h3>{campeao.title}</h3>
-                    <p>{campeao.lore}</p>
-                </div>
-            </Wrapper>
-        </Container>
+    return (
+      <Container background={"#121212"} minHeight={"100vh"}>
+        <Banner
+          srcImage={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${campeao.id}_0.jpg`}
+        />
+        <Wrapper>
+          <Jumbotron
+            name={campeao.name}
+            title={campeao.title}
+            lore={campeao.lore}
+          />
+        </Wrapper>
+      </Container>
     );
 }
 

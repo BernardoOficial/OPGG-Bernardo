@@ -33,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: "Poppins", sans-serif;
-        // overflow-x: hidden;
     }
 
     
@@ -49,6 +48,7 @@ const theme = {
         quarta: '#232324',
         textoBranco: "#ffffff",
         textoPreto: "#444444",
+        textoCinza: "#dddddd",
         tituloBranco: "#ffffff",
         tituloPreto: "#444444"
     }
