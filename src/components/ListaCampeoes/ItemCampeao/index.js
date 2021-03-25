@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Item = ({ className, index, idName, name, tags }) => {
@@ -9,7 +10,8 @@ const Item = ({ className, index, idName, name, tags }) => {
     .replace(`, ${lastTag}`, ` e ${lastTag}`);
 
   return (
-    <li
+    <Link
+      to={`/campeoes/${idName}`}
       className={className}
       style={{ animationDelay: `${index * 0.2}s` }}
     >
@@ -24,13 +26,14 @@ const Item = ({ className, index, idName, name, tags }) => {
           <p>{formatTagsEmString}</p>
         </div>
       </figure>
-    </li>
+    </Link>
   );
 };
 
 const ItemCampeao = styled(Item)`
   display: inline-block;
-  list-style: none;
+  // list-style: none;
+  text-decoration: none;
   border-radius: 5px;
   overflow: hidden;
   width: 100%;
