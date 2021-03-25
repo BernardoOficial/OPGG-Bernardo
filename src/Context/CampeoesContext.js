@@ -23,8 +23,6 @@ const CampeoesProvider = ({children}) => {
         setCampeoesVisualizados(nomeTodosCampeoes);
     }, [campeoes])
 
-    // console.log(nomeTodosCampeoes,campeoesVisualizados);
-
     const filtrarCampeoes = filtroSelecionado => {
 
         const { campeaoBuscado, categoriaBuscada } = filtroSelecionado;

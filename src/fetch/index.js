@@ -13,6 +13,22 @@ const buscarCampeoes = async () => {
     return campeoes;
 }
 
+const buscarMaisInfoCampeao = async campeao => {
+
+    const response = await fetch(
+      `http://ddragon.leagueoflegends.com/cdn/11.6.1/data/pt_BR/champion/${campeao}.json`
+    );
+
+    const { data } = await response.json();
+
+    if(!response.ok) {
+        throw new Error('Erro ao buscar mais informações do campeão.');
+    }
+
+    return data[campeao];
+}
+
 export {
-    buscarCampeoes
+    buscarCampeoes,
+    buscarMaisInfoCampeao
 }
