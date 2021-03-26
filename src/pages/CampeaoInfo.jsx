@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { buscarMaisInfoCampeao } from "../fetch";
+
 import Banner from "../components/Banner";
 import Container from "../components/Container";
 import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
-import { buscarMaisInfoCampeao } from "../fetch";
+import Spells from "../components/Spells";
 
 const CampeaoInfo = () => {
 
@@ -32,6 +34,12 @@ const CampeaoInfo = () => {
             name={campeao.name}
             title={campeao.title}
             lore={campeao.lore}
+          />
+          <Spells
+            name={campeao.passive && campeao.passive.name}
+            description={campeao.passive && campeao.passive.description}
+            urlPassive={campeao.passive && campeao.passive.image.full}
+            url4Spells={campeao.spells && campeao.spells}
           />
         </Wrapper>
       </Container>
