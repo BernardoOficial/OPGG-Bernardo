@@ -36,10 +36,8 @@ const CampeaoInfo = () => {
             lore={campeao.lore}
           />
           <Spells
-            name={campeao.passive && campeao.passive.name}
-            description={campeao.passive && campeao.passive.description}
-            urlPassive={campeao.passive && campeao.passive.image.full}
-            url4Spells={campeao.spells && campeao.spells}
+            passive={campeao.passive && campeao.passive}
+            fourSpells={campeao.spells && campeao.spells}
           />
         </Wrapper>
       </Container>
