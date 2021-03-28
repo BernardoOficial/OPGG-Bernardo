@@ -7,6 +7,7 @@ import Container from "../components/Container";
 import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
 import Spells from "../components/Spells";
+import Skins from "../components/Skins";
 
 const CampeaoInfo = () => {
 
@@ -25,7 +26,7 @@ const CampeaoInfo = () => {
     console.log(campeao);
 
     return (
-      <Container background={"#121212"} minHeight={"100vh"}>
+      <Container flexDirectionColumn background={"#121212"} minHeight={"100vh"}>
         <Banner
           srcImage={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${campeao.id}_0.jpg`}
         />
@@ -40,6 +41,7 @@ const CampeaoInfo = () => {
             fourSpells={campeao.spells && campeao.spells}
           />
         </Wrapper>
+        <Skins name={campeao.name} skins={campeao.skins} />
       </Container>
     );
 }

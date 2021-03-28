@@ -6,14 +6,6 @@ const limparTagsNaString = string => {
   return string;
 }
 
-// limparTagsNaString('Bernardo <div> Oi </div> Pereira');
-// limparTagsNaString(
-//   "Periodicamente, o próximo ataque básico de Aatrox causa <physicalDamage>Dano Físico</physicalDamage> adicional e o cura com base na Vida máxima do alvo."
-// );
-// limparTagsNaString(
-//  "Os ataques de Ashe reduzem a velocidade do alvo e fazem com que ela cause mais dano a ele.<br><br>Os Acertos Críticos de Ashe não causam dano adicional, mas reduzem ainda mais a velocidade do alvo."
-// );
-
 const Base = ({ className, passive, fourSpells }) => {
 
     const [sectionActive, setSectionActive] = useState(0);
