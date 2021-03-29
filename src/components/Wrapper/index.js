@@ -9,6 +9,7 @@ const Wrapper = styled.section`
   ${(props) => props.isSkew && "transform: skew(0, 5deg);"}
 
   @media (max-width: 500px) {
+    padding: 0 20px;
     ${(props) => props.isSkew && "transform: skew(0, 10deg);"}
   }
 `;

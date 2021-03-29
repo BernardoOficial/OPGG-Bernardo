@@ -56,8 +56,8 @@ const Skins = styled(Base)`
   }
 
   .wrapper {
-      max-width: 600px;
-      margin: 0 auto;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .toggle-icon {
@@ -86,15 +86,23 @@ const Skins = styled(Base)`
   }
 
   .current-skin {
-      margin-top: 2rem;
+    margin-top: 2rem;
 
-      img {
-          display: block;
-          width: 100%;
-          height: 70vh;
-          object-fit: cover;
-          background-position: center;
+    @media (max-width: 600px) {
+      margin-top: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+
+      @media (max-width: 600px) {
+        height: 45vh;
+        object-fit: contain;
       }
+    }
   }
 `;
 
