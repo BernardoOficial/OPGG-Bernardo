@@ -8,6 +8,7 @@ import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
 import Spells from "../components/Spells";
 import Skins from "../components/Skins";
+import LinkStyled from "../components/Link";
 
 const CampeaoInfo = () => {
 
@@ -31,6 +32,7 @@ const CampeaoInfo = () => {
           srcImage={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${campeao.id}_0.jpg`}
         />
         <Wrapper>
+          <LinkStyled to="/campeoes">Voltar</LinkStyled>
           <Jumbotron
             name={campeao.name}
             title={campeao.title}
